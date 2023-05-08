@@ -350,6 +350,10 @@ function changeIdPoint(par_id, par_setor){
     doc_point.value = par_id;
     doc_setor = document.getElementById("setor_id");
     doc_setor.value = par_setor;
+
+    const title = 'ATENÇÃO!';
+    const message = 'O nível de sua poluição está em estado de ALERTA, é necessário cuidado!';
+    alert(`${title} ${message}`);
 }
 
 //NAV BAR
