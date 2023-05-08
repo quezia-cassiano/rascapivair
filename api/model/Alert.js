@@ -5,10 +5,10 @@ let Alert = new Schema({
   name: {
     type: String
   },
-  id: {
-    type: Number
+  empresa: {
+    type: String
   },
-  alerta: {
+  alert: {
     type: String
   }
 },

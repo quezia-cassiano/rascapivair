@@ -48,7 +48,7 @@ alertRoutes.route('/update/:id').put(function (req, res) {
       res.status(400).send({'status': 'failure','mssg': 'Unable to find data'});
     } else {
         alert.name = req.body.name;
-        alert.id = req.body.id;
+        alert.empresa = req.body.empresa;
         alert.alert = req.body.alert;
 
         alert.save().then(business => {
