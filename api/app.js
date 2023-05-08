@@ -43,11 +43,10 @@ async function subscribePush() {
 }
 // Enviar notificação push para um usuário
 async function changeIdPoint() {
-  const title = 'Nova mensagem';
-  const message = 'Você tem uma nova mensagem';
-  const icon = '';
-  alert(`text${title} text${message} text.${icon}` );
-
+  const title = 'ATENÇÃO!';
+  const message = 'O nível de sua poluição está em estado de ALERTA, é necessário cuidado!';
+  alert(`${title} ${message}` );
+  
   // Obter as informações de inscrição do usuário do servidor
   const subscription = await fetch('/subscription').then(res => res.json());
 
@@ -55,6 +54,5 @@ async function changeIdPoint() {
   await webpush.sendNotification(subscription, JSON.stringify({
     title: title,
     message: message,
-    icon: icon
   }));
 }
