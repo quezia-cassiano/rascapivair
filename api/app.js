@@ -27,7 +27,7 @@ const SERVER_KEY = 'AAAAgrUYNJU:APA91bGlrOhpAm3dw_TY0MRi5KWyQO0od-Ymn3L2WzjNjZZv
 
 // Registrar o serviço de notificação push
 async function subscribePush() {
-  const subscription = await navigator.serviceWorker.register('/sw.js');
+  const subscription = await navigator.serviceWorker.register('/service-worker.js');
 
   // Obter a chave do PushManager
   const subscriptionJson = await subscription.toJSON();
@@ -42,10 +42,11 @@ async function subscribePush() {
   });
 }
 // Enviar notificação push para um usuário
-async function sendPushNotification() {
-  const title = 'Você tem um novo alerta';
-  const message = 'Atenção!  Você possui um novo alerta';
-  const icon = '/images/pin-loc-orange.png';
+async function changeIdPoint() {
+  const title = 'Nova mensagem';
+  const message = 'Você tem uma nova mensagem';
+  const icon = '';
+  alert(`text${title} text${message} text.${icon}` );
 
   // Obter as informações de inscrição do usuário do servidor
   const subscription = await fetch('/subscription').then(res => res.json());
